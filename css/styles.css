@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+:root 
+{
+    --main-color:#3867d6;
+}
+*
+{
+    font-family: 'Nunito', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    border:none;
+    text-decoration:none; 
+    transition: .2s linear;
+}
+
+html 
+{
+    font-size: 62.5%;
+    overflow-x:hidden;         /* there is no overflow in x-axis dirn */
+    scroll-padding-top: 7rem;   /*specify distance from top set position on child elements*/
+    scroll-behavior: smooth;    
+}
+
+html::-webkit-scrollbar  /*pseudo-element affects the style of an element's scrollbar when it has scrollable overflow.*/
+{
+    width:1rem;
+}
+html::-webkit-scrollbar-track   
+{
+    background: #444;
+}
+html::-webkit-scrollbar-thumb
+{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body
+{
+  background: #222;
+}
+.header 
+{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10000;
+    background: #333;
+    display:flex;            /* manipulate element's spacing,alignment automatically within container*/
+    align-items: center;
+    justify-content:space-between;
+    padding:1.5rem 9%;
+}
+
+/* CSS of logo */
+.header .logo
+{
+    font-weight: bolder;
+    color:#fff;
+    font-size: 2.5rem;
+}
+.header .logo span
+{
+    color:rgb(88, 95, 187);
+}
+
+/* Nav css */
+.header .navbar a
+{
+    font-size: 1.7rem;
+    color:#fff;
+    margin-left:2rem;
+}
+
+.header .navbar a:hover 
+{
+    color:rgb(88, 95, 187);
+}
+
+/* css of Menu-bars */
+#menu-bars
+{
+    font-size:3rem;
+    color:#fff;
+    cursor: pointer;
+    display:none;
+}
+
+/* css of HOME section */
+section 
+{
+    padding:2rem;
+}
+
+.home .content
+{
+    text-align: center;
+    padding-top: 6rem;
+    margin: 2rem auto;
+    max-width: 70rem;
+}
+
+.home .content h3 pre
+{
+    color:#fff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-style:oblique;
+}
+
+.home .content h3 span
+{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+/* to set height and width of slider images */
+ .home .home-slider .swiper-slide{
+    overflow: hidden;
+    border-radius: .5rem;
+    height: 50rem;
+    width:36rem;
+}
+.home .home-slider .swiper-slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* css of SERVICE section */
+.heading
+{
+    text-align: center;
+    padding-bottom: 2rem;
+    color:#fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.heading span
+{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.service .box-container
+{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap:5.5rem;
+}
+
+.service .box-container .box 
+{
+    border-radius: 5rem;
+    background: #333;
+    text-align: center;
+    padding: 2.5rem;
+}
+.service .box-container .box i
+{
+    height:6rem;
+    width:6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    font-size:2.5rem;
+    background: var(--main-color);
+    color:#fff;
+}
+.service .box-container .box h3 a
+{
+    font-size: 3rem;
+    color:#fff;
+    padding:1rem 0;
+}
+.service .box-container .box p
+{
+    font-size: 1.5rem;
+    color:#eee;
+    line-height: 1.8;
+    text-transform: lowercase;
+}
+
+/* css of ABOUT section */
+.about .heading span
+{
+    padding-bottom: 50px;
+}
+
+.about .row 
+{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.8rem;
+}
+.about .row .image 
+{
+    float:left;
+    padding: 1rem;
+    width:40%;
+}
+.about .row .image img 
+{
+    width:100%;
+    border-radius: 0.5 rem;
+    border:1rem solid #333;
+}
+.about .row .content
+{
+    flex: 1 1 45rem;
+}
+.about .row .content h3 
+{
+    font-size: 3.0rem;
+    color:#fff; 
+}
+.about .row .content p 
+{
+    font-size: 1.5rem;
+    color:#eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/* for all buttons */
+.btn 
+{
+    margin-top: 1rem;
+    display:inline-block;   /*to create side by side boxes that collapse and wrap properly depending on the available space */
+    padding: 0.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background: #666;
+    color:#fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn:hover
+{
+    background: rgb(101, 83, 167);
+}
+
+
+/* css of GALLERY section */
+.gallery .box-container 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));  /*1fr=one part of whole(100% of available space)*/
+                                                        /*using this we get multiple cols divided in available space*/
+    gap:4.0rem;
+}
+.gallery .box-container .box
+{
+    position: relative;
+    border:1rem solid #333;
+    border-radius: 0.5rem;
+    height:25rem;
+    cursor:pointer;
+    overflow:hidden;
+}
+.gallery .box-container .box img 
+{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.gallery .box-container .box:hover img 
+{
+    transform:scale(1.2);
+    filter:grayscale();
+}
+.gallery .box-container .box .title
+{
+    position: absolute;
+    top:-10rem; left:0; right:0;
+    background: #333;
+    color:#fff;
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+.gallery .box-container .box:hover .title
+{
+    top:0;
+}
+.gallery .box-container .box .icons
+{
+    position: absolute;
+    bottom:-10rem; left:0; right:0;
+    background: #333;
+    padding-top: 1rem;
+    text-align: center;
+}
+.gallery .box-container .box:hover .icons
+{
+    bottom: 0;
+}
+.gallery .box-container .box .icons a
+{
+    font-size: 2rem;
+    margin: 0.5rem 1rem;
+    color:#fff;
+}
+.gallery .box-container .box .icons a:hover
+{
+    color:var(--main-color);
+}
+
+/* css of PRICE section */
+.price .box-container 
+{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(25rem,1fr));
+    gap:1.5rem;
+}
+.price .box-container .box 
+{
+    padding: 2rem,0;
+    background: #333;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.price .box-container .box:hover 
+{
+    transform: scale(1.07);
+}
+.price .box-container .box .title
+{
+    background: var(--main-color);
+    color:#fff;
+    padding: 1.5rem 0;
+    font-size: 2.8rem;
+}
+.price .box-container .box .amount 
+{
+    color:#fff;
+    padding-top: 1.0rem;
+    font-size: 3.5rem;
+}
+.price .box-container .box ul
+{
+    list-style-type:none;       /*required to give bcz by default it takes . as eg(.music)*/
+    padding: 1rem 0;
+}
+.price .box-container .box ul li
+{
+    font-size: 1.5rem;
+    color:#eee;
+    padding: 1rem 0;
+}
+.price .box-container .box ul li i
+{
+    color:var(--main-color);
+    padding-right: 0.5rem;
+}
+
+/* css of REVIEW section */
+.review .box
+{
+    border-radius: 0.5rem;
+    background: #333;
+    padding:2rem;
+    position: relative;
+    color:rgb(141, 180, 192);
+}
+.review .box .fa-quote-right 
+{
+    position: absolute;
+    top:2rem; right:2rem;
+    color:var(--main-color);
+    font-size: 5rem;
+}
+.review .box .user 
+{
+    display:flex;
+    align-items: center;
+    gap:1.5rem;
+    padding-bottom: 1rem;
+}
+.review .box .user img 
+{
+    height:7rem;
+    width:7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review .box .user h3
+{
+    font-size: 2rem;
+    color:#c04da7;
+}
+.review .box .user span 
+{
+    font-size: 1.5rem;
+    color:#5fc982;
+}
+.review .box p
+{
+    line-height: 2;
+    color:#eee;
+    padding:0.5rem 0;
+    font-size: 1.6rem;
+}
+
+/* css of FORM section */
+.contact form
+{
+    max-width: 70rem;
+    margin:1rem auto;
+    text-align: center;
+}
+.contact form .inputBox 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .inputBox input,.contact form textarea
+{
+    width:100%;
+    background: #333;
+    border-radius: 0.5rem;
+    padding:1rem;
+    margin:0.7rem 0;
+    font-size: 1.5rem;
+    color:#fff;
+    text-transform: none;
+}
+.contact form .inputBox input:focus,.contact form textarea:focus  /*pop up in focus way the fields which are not filled*/
+{
+    background: #444;
+}
+.contact form .inputBox input 
+{
+    width:49%;
+}
+.contact form textarea
+{
+    resize: none;
+}
+
+/* css of FOOTER section */
+.footer .box-container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap:1.5rem;
+}
+.footer .box-container .box h3
+{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color:#fff;
+}
+.footer .box-container .box a
+{
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color:#eee;
+}
+.footer .box-container .box a i
+{
+    padding-right: 0.5rem;
+    color: rgb(81, 81, 179);
+}
+.footer .box-container .box a:hover i
+{
+    padding-right: 1.5rem;
+    color: #dd56d6;
+    transform: scale(1.3);
+}
+.footer .credit 
+{
+    text-align: center;
+    border-top: 0.1rem solid #222;
+    color:#fff;
+    padding:2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+.footer .credit span 
+{
+    color:rgb(81, 81, 179);
+}
+
+/* css of COPYRIGHT */
+.copyright 
+{
+    padding: 10px;
+    border-top: 1px solid grey;
+    background-color: gray;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* media queries */
+@media (max-width:991px)
+{
+    html 
+    {
+        font-size: 55%;
+    }
+    .header
+    {
+        padding:1.5rem 2rem;
+
+    }
+    section 
+    {
+        padding: 2rem;
+        
+    }
+    .price .box-container
+    {
+        gap:7.5rem;
+    }
+    #menu-bars
+    {
+        display: initial;
+        overflow-x: hidden;
+    }
+
+}
+@media (max-width:768px)
+{
+    #menu-bars{
+        display: initial;             /* Ensure the menu icon is always visible */
+        color: white;             /* Ensure the menu icon is visible against the background */
+    }
+    .header .navbar{
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: .1rem solid #222;
+        background: #333;
+        height: auto;               /* Allow the navbar to expand to fit its content */
+        width: 100%;                /* Occupy the full width of the viewport */
+        transition: all 0.3s ease;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    body
+    {
+        overflow-x: hidden;
+    }
+    .header .navbar.active{
+        top: 0px;                     /* Move the navbar to the top when active */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .fa-times
+    {
+        transform:rotate(180deg);
+    }
+
+    .header .navbar a 
+    {
+        display:flex;
+        background: #222;
+        border-radius:.5rem;
+        padding: 1.3rem;
+        margin:1.3rem;
+        font-size:2rem;
+    }
+
+    .home .content h3 
+    {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width:450px)
+{
+    html 
+    {
+        font-size:50%;
+    }
+
+    .home .home-slider .swiper-slide
+    {
+        width: 27rem;
+    }
+    .contact form .inputBox input 
+    {
+       width:100%;
+    }
+}
